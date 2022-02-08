@@ -13,6 +13,13 @@ class Runtime
      * @var string
      */
     protected $name;
+    
+    /**
+     * Describes if runtime us custom or provided by Appwrite
+     * 
+     * @var bool
+     */
+    protected $isCustom = false;
 
     /**
      * @var Version[]
@@ -41,6 +48,16 @@ class Runtime
     {
         return $this->key;
     }
+    
+    /**
+     * Mark runtime as custom.
+     * 
+     * @param bool $isCustom
+     */
+    public function setCustom(bool $isCustom): void
+    {
+        $this->isCustom = $isCustom;
+    }    
 
     /**
      * Adds new version to runtime.
